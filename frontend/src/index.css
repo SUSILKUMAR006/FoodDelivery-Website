@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{
+  --bg-main: #000000;
+  --bg-elevated: #0a0a0a;
+  --bg-soft: #141414;
+  --text-main: #f4f4f5;
+  --text-muted: #9ca3af;
+  --accent: #F7B41A;
+  --accent-soft: #3a1f06;
+}
+
+*{
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-main);
+  background: #000000;
+  overflow-x: hidden;
+}
+
+.active{
+  border-bottom:1px solid var(--accent);
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Modern Animation Keyframes */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleInRotate {
+  from {
+    opacity: 0;
+    transform: scale(0.92) rotate(5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulseBorder {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(247, 180, 26, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(247, 180, 26, 0);
+  }
+}
+
+@keyframes popBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotateY(-90deg);
+    filter: blur(4px);
+  }
+  50% {
+    transform: scale(1.05) rotateY(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    filter: blur(0);
+  }
+}
+
+/* Animation Classes */
+.animate-slide-up {
+  animation: slideUpFade 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-rotate {
+  animation: scaleInRotate 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.9s ease-out forwards;
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 2s infinite;
+}
+
+.animate-pop-bounce {
+  animation: popBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+.animate-rotate-glow {
+  animation: rotateGlow 0.9s ease-out forwards;
+  opacity: 0;
+  perspective: 1000px;
+}
+
+/* Stagger delays for sequential animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+.stagger-9 { animation-delay: 0.9s; }
+.stagger-10 { animation-delay: 1s; }
